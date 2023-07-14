@@ -9,7 +9,6 @@ async function submitGuess(evt){
             guess: guess
         }
     })
-    console.log(resp)
     let msg;
     if(resp.data.result == "ok" && !guessed.includes(guess)){
         msg = `Great Job! You earned ${guess.length} points!`
@@ -19,7 +18,7 @@ async function submitGuess(evt){
     }
     else if (resp.data.result == "not-on-board")
         msg = "Could not find word on board, try again!"
-    else if (resp.data.result == "not-a-word") {
+    else if (resp.data.result == "not-word") {
         msg = "That's not a word I have in my dictonary, try again!"
     }
     else{
