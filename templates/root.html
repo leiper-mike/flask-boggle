@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>High score: {{highScore}} 
+        Times Played: {{timesPlayed}}
+    </h2>
+    <h3>Time left: <span id="timer">60</span></h3>
+    <h4>Points: <span id="points">0</span></h4>
+    <p id="msg"></p>
+    <table>
+        {% for row in board %}
+            <tr>
+                {% for char in row %}
+                <th>
+                    {{ char }}
+                </th>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    
+
+    
+        <label for="input">Guess</label>
+        <input name="input" type="text" placeholder="Input guess" id="input">
+        <button type="button" id="btn">Submit guess!</button>
+    
+    
+{% endblock %}
